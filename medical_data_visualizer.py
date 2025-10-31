@@ -79,6 +79,6 @@ def draw_heat_map():
         cbar_kws={"shrink": 0.5}
     )
 
-    # 16
+    # 16. Save and return figure
     fig.savefig('heatmap.png')
     return fig
