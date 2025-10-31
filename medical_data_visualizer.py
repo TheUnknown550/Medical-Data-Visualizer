@@ -25,12 +25,19 @@ def draw_cat_plot():
     )
 
 
-    # 6
-    df_cat = 
+    # 6. Group and reformat catplot
+    df_cat = df_cat.groupby(['cardio', 'variable'])['value'].mean().reset_index()
     
 
-    # 7
-
+    # 7. Create the catplot
+    fig = sns.catplot(
+        data=df_cat,
+        x='variable',
+        y='total',
+        col='cardio',
+        hue='value',   
+        kind='bar'
+    ).fig
 
 
     # 8
