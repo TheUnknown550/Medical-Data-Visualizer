@@ -40,18 +40,14 @@ def draw_cat_plot():
     ).fig
 
 
-    # 8
-    fig = None
-
-
-    # 9
+    # 8. Save and return figure
     fig.savefig('catplot.png')
     return fig
 
 
-# 10
+# 10. Draw the heat map
 def draw_heat_map():
-    # 11
+    # 11. Clean the data
     df_heat = None
 
     # 12
