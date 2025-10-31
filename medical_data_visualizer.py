@@ -56,20 +56,28 @@ def draw_heat_map():
         (df['weight'] <= df['weight'].quantile(0.975))
     ]
 
-    # 12
+    # 12. Calculate the correlation matrix
     corr = df_heat.corr()
 
-    # 13
+    # 13. Create the mask
     mask = np.triu(np.ones_like(corr, dtype=bool))
 
+    # 14. Create the figure
+    fig, ax = plt.subplots(figsize=(12, 8))
 
-
-    # 14
-    fig, ax = None
-
-    # 15
-
-
+    # 15. Draw the heatmap
+    sns.heatmap(
+        corr,
+        mask=mask,
+        annot=True,
+        fmt=".1f",
+        center=0,
+        vmax=0.3,
+        vmin=-0.1,
+        square=True,
+        linewidths=0.5,
+        cbar_kws={"shrink": 0.5}
+    )
 
     # 16
     fig.savefig('heatmap.png')
