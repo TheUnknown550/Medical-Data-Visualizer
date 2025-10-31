@@ -10,8 +10,10 @@ df = pd.read_csv("medical_examination.csv")
 # calculate BMI = weight / (height/100)^2
 df['overweight'] = (df['weight'] / ((df['height'] / 100) ** 2)).apply(lambda x: 1 if x > 25 else 0)
 
-# 3
-
+# 3. Normalize cholesterol(0:good, 1:bad)
+df['cholesterol'] = df['cholesterol'].apply(lambda x: 0 if x == 1 else 1)
+# Normalize gluc (0:good, 1:bad)
+df['gluc'] = df['gluc'].apply(lambda x: 0 if x == 1 else 1)
 
 # 4
 def draw_cat_plot():
