@@ -7,7 +7,7 @@ import numpy as np
 df = pd.read_csv("medical_examination.csv")
 
 # 2. Add 'overweight' column
-# BMI = weight / (height/100)^2
+# Calculate: BMI = weight / (height/100)^2
 df['overweight'] = (df['weight'] / ((df['height'] / 100) ** 2)).apply(lambda x: 1 if x > 25 else 0)
 
 # 3. Normalize cholesterol and gluc (0 = good, 1 = bad)
@@ -63,7 +63,7 @@ def draw_heat_map():
     # 13. Generate mask for upper triangle
     mask = np.triu(np.ones_like(corr, dtype=bool))
 
-    # 14. Set up matplotlib figure
+    # 14. Set up matplotlib
     fig, ax = plt.subplots(figsize=(12, 8))
 
     # 15. Draw heatmap
