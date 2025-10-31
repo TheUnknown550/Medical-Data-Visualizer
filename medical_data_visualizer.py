@@ -15,14 +15,18 @@ df['cholesterol'] = df['cholesterol'].apply(lambda x: 0 if x == 1 else 1)
 # Normalize gluc (0:good, 1:bad)
 df['gluc'] = df['gluc'].apply(lambda x: 0 if x == 1 else 1)
 
-# 4
+# 4. Draw Plot
 def draw_cat_plot():
-    # 5
-    df_cat = None
+    # 5. Create DataFrame for category plot using pd.melt
+    df_cat = pd.melt(
+        df,
+        id_vars=['cardio'],
+        value_vars=['active', 'alco', 'cholesterol', 'gluc', 'overweight', 'smoke']
+    )
 
 
     # 6
-    df_cat = None
+    df_cat = 
     
 
     # 7
